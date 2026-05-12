@@ -18,7 +18,7 @@ function mostrarInventario() {
 function agregarProducto(producto) {
     // PUNTO EXTRA: Evitar productos duplicados
     if (productos.indexOf(producto) !== -1) {
-        console.log(`Ese producto ya existe ❌`);
+        console.log(`Ese producto ya existe`);
     } else {
         productos.push(producto);
         console.log(`Producto agregado: ${producto}`);

@@ -1,22 +1,18 @@
-// 1. Crear el array inicial
 let productos = [
     "Mouse",
     "Teclado",
     "Monitor",
     "Audifonos"
-];
+]; // Array inicial
 
-// 2. Mostrar inventario
 function mostrarInventario() {
     console.log("Inventario actual:");
     for (let i = 0; i < productos.length; i++) {
         console.log(`${i + 1}. ${productos[i]}`);
     }
-}
+} // Función mostrar inventario
 
-// 3. Agregar producto
 function agregarProducto(producto) {
-    // PUNTO EXTRA: Evitar productos duplicados
     if (productos.indexOf(producto) !== -1) {
         console.log(`Ese producto ya existe`);
     } else {
@@ -24,9 +20,8 @@ function agregarProducto(producto) {
         console.log(`Producto agregado: ${producto}`);
         mostrarInventario();
     }
-}
+} // Función agregar producto
 
-// 4. Eliminar último producto
 function eliminarUltimoProducto() {
     if (productos.length > 0) {
         let eliminado = productos.pop();
@@ -35,9 +30,8 @@ function eliminarUltimoProducto() {
     } else {
         console.log("El inventario ya está vacío.");
     }
-}
+} // Función eliminar último producto
 
-// 5. Reemplazar producto
 function reemplazarProducto(indice, nuevoProducto) {
     if (indice >= 0 && indice < productos.length) {
         productos.splice(indice, 1, nuevoProducto);
@@ -46,9 +40,8 @@ function reemplazarProducto(indice, nuevoProducto) {
     } else {
         console.log(`El índice ${indice} no es válido.`);
     }
-}
+} // Función reemplazar producto
 
-// 6. Buscar producto
 function buscarProducto(producto) {
     let indice = productos.indexOf(producto);
     if (indice !== -1) {
@@ -56,33 +49,37 @@ function buscarProducto(producto) {
     } else {
         console.log(`El producto "${producto}" no existe en el inventario.`);
     }
-}
+} // Función buscar producto
 
-// 7. Ordenar inventario
 function ordenarProductos() {
     productos.sort();
     console.log("Inventario ordenado:");
     mostrarInventario();
-}
+} // Función ordenar inventario
 
-// 8. Mostrar cantidad
 function mostrarCantidad() {
     console.log(`Cantidad total: ${productos.length} productos`);
-}
+} // Función mostrar cantidad
 
 function agregarProductoPrompt() {
-    let nuevoProducto = prompt("Ingresa el nombre del producto a agregar:");
+    let nuevoProducto = prompt("Ingresa el nombre del producto a agregar (puedes separar varios con comas):");
     if (nuevoProducto && nuevoProducto.trim() !== "") {
-        agregarProducto(nuevoProducto.trim());
+        let productosSeparados = nuevoProducto.split(",");
+        for (let i = 0; i < productosSeparados.length; i++) {
+            let productoLimpio = productosSeparados[i].trim();
+            if (productoLimpio !== "") {
+                agregarProducto(productoLimpio);
+            }
+        }
     }
-}
+} // Función agregar producto con prompt
 
 function buscarProductoPrompt() {
     let productoBuscado = prompt("Ingresa el nombre del producto a buscar:");
     if (productoBuscado && productoBuscado.trim() !== "") {
         buscarProducto(productoBuscado.trim());
     }
-}
+} // Función buscar producto con prompt
 
 function reemplazarProductoPrompt() {
     let indiceStr = prompt("Ingresa el índice (empezando desde 0) del producto a reemplazar:");
@@ -97,7 +94,7 @@ function reemplazarProductoPrompt() {
             console.log("Por favor, ingresa un número de índice válido.");
         }
     }
-}
+} // Función reemplazar producto con prompt
 
 function mostrarMenu() {
     console.log(`
@@ -114,6 +111,6 @@ Puedes ejecutar las siguientes funciones en esta consola:
 
 ¡Escribe el nombre de la función seguido de paréntesis () y presiona Enter!
     `);
-}
+} // Función mostrar menú
 
 mostrarMenu();

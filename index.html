@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario Gamer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .instructions {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Inventario Gamer</h1>
+        <div class="instructions">
+            <p><strong>¡Hola!</strong> Abre la consola de desarrollo de tu navegador (presiona <strong>F12</strong> o clic derecho -> Inspeccionar -> Consola) para ver los resultados del sistema.</p>
+            <p>También puedes usar los botones de abajo para interactuar con el inventario (Punto Extra 2: uso de prompt).</p>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="mostrarInventario()">Mostrar Inventario</button>
+            <button onclick="agregarProductoPrompt()">Agregar Producto (+)</button>
+            <button onclick="eliminarUltimoProducto()">Eliminar Último (-)</button>
+            <button onclick="buscarProductoPrompt()">Buscar Producto</button>
+            <button onclick="reemplazarProductoPrompt()">Reemplazar Producto</button>
+            <button onclick="ordenarProductos()">Ordenar (A-Z)</button>
+            <button onclick="mostrarCantidad()">Mostrar Cantidad Total</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

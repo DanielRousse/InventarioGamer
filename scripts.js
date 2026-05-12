@@ -70,10 +70,6 @@ function mostrarCantidad() {
     console.log(`Cantidad total: ${productos.length} productos`);
 }
 
-// =========================================================
-// PUNTO EXTRA 2: Funciones con prompt() para los botones
-// =========================================================
-
 function agregarProductoPrompt() {
     let nuevoProducto = prompt("Ingresa el nombre del producto a agregar:");
     if (nuevoProducto && nuevoProducto.trim() !== "") {
@@ -103,13 +99,9 @@ function reemplazarProductoPrompt() {
     }
 }
 
-// =========================================================
-// MENÚ DE AYUDA PARA LA CONSOLA
-// =========================================================
-
 function mostrarMenu() {
     console.log(`
-🎮 --- MENÚ DE INVENTARIO GAMER --- 🎮
+              --- MENÚ DE COMANDOS ---
 Puedes ejecutar las siguientes funciones en esta consola:
 
 - mostrarInventario()        -> Muestra todos los productos.
@@ -124,5 +116,4 @@ Puedes ejecutar las siguientes funciones en esta consola:
     `);
 }
 
-// Mostrar el menú automáticamente al cargar la página
 mostrarMenu();

@@ -18,7 +18,6 @@ function agregarProducto(producto) {
     } else {
         productos.push(producto);
         console.log(`Producto agregado: ${producto}`);
-        mostrarInventario();
     }
 } // Función agregar producto
 
@@ -71,6 +70,7 @@ function agregarProductoPrompt() {
                 agregarProducto(productoLimpio);
             }
         }
+        mostrarInventario();
     }
 } // Función agregar producto con prompt
 

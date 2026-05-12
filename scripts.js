@@ -102,3 +102,27 @@ function reemplazarProductoPrompt() {
         }
     }
 }
+
+// =========================================================
+// MENÚ DE AYUDA PARA LA CONSOLA
+// =========================================================
+
+function mostrarMenu() {
+    console.log(`
+🎮 --- MENÚ DE INVENTARIO GAMER --- 🎮
+Puedes ejecutar las siguientes funciones en esta consola:
+
+- mostrarInventario()        -> Muestra todos los productos.
+- agregarProductoPrompt()    -> Pide un producto y lo agrega.
+- eliminarUltimoProducto()   -> Elimina el último producto.
+- buscarProductoPrompt()     -> Busca un producto por nombre.
+- reemplazarProductoPrompt() -> Reemplaza un producto existente.
+- ordenarProductos()         -> Ordena el inventario alfabéticamente.
+- mostrarCantidad()          -> Muestra el total de productos.
+
+¡Escribe el nombre de la función seguido de paréntesis () y presiona Enter!
+    `);
+}
+
+// Mostrar el menú automáticamente al cargar la página
+mostrarMenu();
